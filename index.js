@@ -9,4 +9,17 @@ function getComputerChoice () {
   };
 };
 
-console.log(getComputerChoice(0.5));
+function getHumanChoice () {
+  const choice = prompt ("Enter your choice: rock, paper, or scissors?");
+
+  if (choice === "rock") {
+    return "rock";
+  } else if (choice === "paper") {
+    return "paper";
+  } else {
+    return "scissors";
+  }
+}
+
+
+
