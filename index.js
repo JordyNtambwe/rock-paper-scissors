@@ -10,7 +10,7 @@ function getComputerChoice () {
 };
 
 function getHumanChoice () {
-  const choice = prompt ("Enter your choice: rock, paper, or scissors?");
+  const choice = prompt ("Enter your choice: Rock, Paper, or Scissors?");
 
   if (choice === "rock") {
     return "rock";
@@ -18,8 +18,10 @@ function getHumanChoice () {
     return "paper";
   } else {
     return "scissors";
-  }
-}
+  };
+};
+
+console.log(getHumanChoice());
 
 
 
