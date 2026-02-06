@@ -19,7 +19,7 @@ function getHumanChoice() {
 // These variables keeps track of the players score
 let humanScore = 0;
 let computerScore = 0;
-
+// This function takes the human and computer choice, play a single round, increment the round winner's score, and log the winner in the console
 function playRound (humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
     console.log(`It's a tie! Both chose ${humanChoice}.`);
@@ -35,7 +35,6 @@ function playRound (humanChoice, computerChoice) {
     console.log(`You lost this round! ${computerChoice} beats ${humanChoice}.`);
   };
 };
-
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
