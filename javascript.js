@@ -9,3 +9,7 @@ function getComputerChoice() {
     return 'scissors';
   };
 };
+// This functions prompts the user to choose between 'rock', 'paper', or 'scissors' and return their choice
+function getHumanChoice() {
+  return prompt('Pick your choice: Rock, Paper, or Scissors?');
+}
