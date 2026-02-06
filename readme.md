@@ -1,0 +1,3 @@
+# Rock, Paper, Scissors
+
+This project is called Rock, Paper, Scissors, and this is the 3rd project created through my journey across The Odin Project's curriculum. This project is inspired by the easy to pick up & learn timeless game of the same name that involves 2 or more players forming rock(fist), paper(flat hand), or scissors(2 fingers). Depending on the opponents choices often in a best out of 3 or 5 rounds: rock will beat scissors, paper will beat rock, scissors will beat paper, one will be delared the winner or end in a draw. With the knowledge learned from this section of the cirriculum: variables, operators, conditionals, function declaration, and function expression, I'll be replicating this game that can be played entirely in the console.
