@@ -37,11 +37,18 @@ function playGame() {
     };
   };
   //This is responsible for the 'playGame' function to only play 5 rounds
-  for (let i = 1; i <= 5; i++) {
+  /* for (let i = 1; i <= 5; i++) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-  };
+  }; */
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const playerSelection = button.id;
+      console.log(playRound(playerSelection));
+    });
+  });
   //This is responsible for the winners declaration at the end of the 5 rounds
   if (humanScore === computerScore) {
     console.log(`It's game over! It's a tie! The final score is ${humanScore} - ${computerScore}`);
