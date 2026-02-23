@@ -22,8 +22,10 @@ function playGame() {
   let computerScore = 0;
   // This function takes the human and computer choice, play a single round, increment the round winner's score, and log the winner in the console each round
   function playRound(humanChoice, computerChoice) {
+    if (humanScore === 5 || computerScore === 5) return;
     const results = document.querySelector('#results');
     const content = document.createElement('div');
+    const winners = document.querySelector('#winners');
     if (humanChoice === computerChoice) {
       content.textContent = `It's a tie! Both chose ${humanChoice}. The score is stil ${humanScore} - ${computerScore}.`;
     } else if (
@@ -38,6 +40,16 @@ function playGame() {
       content.textContent = `You lost this round! ${computerChoice} beats ${humanChoice}. The score is now ${computerScore} - ${humanScore}`;
     };
     results.appendChild(content);
+    //This is responsible for the winners declaration when a player reaches 5 points
+    if (humanScore === 5 || computerScore === 5) {
+      const winnersDiv = document.createElement('div');
+      if (humanScore === 5) {
+        winnersDiv.textContent = `It's game over! You won! The final score is ${humanScore} - ${computerScore}`
+      } else {
+        winnersDiv.textContent = `It's game over! You lost! The final score is ${computerScore} - ${humanScore}`;
+      };
+      winners.appendChild(winnersDiv)
+    };
   };
   //This is responsible for the 'playGame' function to only play 5 rounds
   /* for (let i = 1; i <= 5; i++) {
@@ -48,18 +60,11 @@ function playGame() {
   const buttons = document.querySelectorAll('button');
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
-      const playerSelection = button.id;
-      console.log(playRound(playerSelection));
+      const humanSelection = button.id;
+      const computerSelection = getComputerChoice();
+      playRound(humanSelection, computerSelection);
     });
   });
-  //This is responsible for the winners declaration at the end of the 5 rounds
-  if (humanScore === computerScore) {
-    console.log(`It's game over! It's a tie! The final score is ${humanScore} - ${computerScore}`);
-  } else if (humanScore > computerScore) {
-    console.log(`It's game over! You won! The final score is ${humanScore} - ${computerScore}`);
-  } else {
-    console.log(`It's game over! You lost! The final score is ${computerScore} - ${humanScore}`);
-  };
 };
 
 playGame();
